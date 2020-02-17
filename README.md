@@ -1,4 +1,5 @@
 # vipmon-vue
+__vipmon__ 의 웹 프론트엔드로, VueJS로 작성되었습니다.
 
 ## Project setup
 ```
