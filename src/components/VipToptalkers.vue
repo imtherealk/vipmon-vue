@@ -2,6 +2,9 @@
   <v-container fluid>
     <h1>adc</h1>
     <h2>vip toptalkers (cps, last 30min.)</h2>
+    <v-btn id="refresh" color="primary" v-on:click="getData">
+         Refresh <v-icon>mdi-refresh</v-icon> 
+    </v-btn>
     <mychart 
       v-bind:chartItems="chartItems"
       v-bind:categories="categories"></mychart>
@@ -81,7 +84,7 @@
         let vm = this;
         axios.get('http://127.0.0.1:5000/vips/toptalkers')
           .then(function (response) {
-            let data = JSON.parse(response.data);
+            let data = response.data;
             vm.vipData = data;
           })
           .catch(function (error) {
@@ -105,6 +108,9 @@
     },
   }
 </script>
-<style>
 
+<style>
+#refresh {
+  margin: 10px;
+}
 </style>
